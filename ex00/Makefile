@@ -23,6 +23,8 @@ clean:
 	rm -f $(OBJS)
 
 fclean :
-	rm rf $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET)
+
+re: fclean all
 
 .PHONY: all clean
