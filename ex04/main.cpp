@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 15:50:20 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/17 14:31:58 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:16:47 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@
 int	open_file(std::fstream &fileStream, std::string file, std::string file_permission)
 {
 	if (file_permission == "r")
-		fileStream.open(file, std::fstream::in);
-	else if (file_permission == "w") {
-		fileStream.open(file, std::fstream::out | std::fstream::trunc);
-	} else {
-		std::cerr << "Invalid file permission!" << std::endl;
-		return (1);
+	{
+		fileStream.open(file.c_str(), std::fstream::in);
+	}
+	else if (file_permission == "w")
+	{
+		fileStream.open(file.c_str(), std::fstream::out);
 	}
 	if (!fileStream.is_open())
 	{
-		std::cerr << "Error opening file!" << std::endl;
+		std::cerr << "Could not open file." << std::endl;
 		return (1);
 	}
 	return (0);
@@ -41,8 +41,6 @@ void	replace(std::string s1, std::string s2, std::fstream *inputFile, std::fstre
 	while(std::getline(*inputFile, line))
 	{
 		pos = 0;
-		// check the line using find, if found will return index of position
-		// if not found will return npos(not found)
 		while ((pos = line.find(s1, pos)) != std::string::npos)
 		{
 			// erase will remove the characters of s1 starting from index pos
@@ -65,7 +63,7 @@ int	main(int ac, char **av)
 	std::string		s2;
 
 	if (ac != 4)
-		return (std::cout << "Wrong number of arguments" << std::endl, 0);
+		return (std::cout << "./replace input.txt oldWord newWord" << std::endl, 0);
 	inputFile = av[1];
 	s1 = av[2];
 	s2 = av[3];

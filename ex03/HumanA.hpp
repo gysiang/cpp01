@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:42:47 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/16 14:15:17 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/23 13:28:55 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class	HumanA
 		Weapon 		&weapon;
 
 	public:
-		HumanA(const std::string &name, Weapon &weapon) : name(name), weapon(weapon) {};
+		HumanA(const std::string &name, Weapon &weapon);
 		~HumanA();
 		void	attack() const;
 };
