@@ -2,7 +2,7 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = harlFilter
+TARGET = a.out
 
 SRCS = main.cpp \
 		Harl.cpp

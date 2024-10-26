@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:33:41 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/17 16:27:21 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/26 22:38:55 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,8 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	int			i = 0;
-	typedef void (Harl::*HarlMemFn)(void);
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	HarlMemFn functions[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	while (i < 4)
 	{

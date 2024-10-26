@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 12:54:51 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/15 13:46:51 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/26 21:57:42 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 // This is heap allocation. This does not delete after the function
 // ends
-Zombie	*newZombie(std::string name)
-{
+Zombie	*newZombie(std::string name) {
 	return (new Zombie(name));
 }
