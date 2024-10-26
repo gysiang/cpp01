@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 16:49:28 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/17 17:10:18 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/26 22:46:01 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	Harl::error(void)
 void	Harl::complain(std::string level)
 {
 	int			i = 0;
+	void (Harl::*functions[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 	while (i < 4)
@@ -54,38 +55,16 @@ void	Harl::complain(std::string level)
 	switch (i)
 	{
 		case 0:
-				std::cout << "[ DEBUG ]" << std::endl;
-				Harl::debug();
-				std::cout << "\n";
-				std::cout << "[ INFO ]" << std::endl;
-				Harl::info();
-				std::cout << "\n";
-				std::cout << "[ WARNING ]" << std::endl;
-				Harl::warning();
-				std::cout << "\n";
-				std::cout << "[ ERROR ]" << std::endl;
-				Harl::error();
-				break;
+				(this->*functions[0])();
+				 __attribute__ ((fallthrough));
 		case 1:
-				std::cout << "[ INFO ]" << std::endl;
-				Harl::info();
-				std::cout << "\n";
-				std::cout << "[ WARNING ]" << std::endl;
-				Harl::warning();
-				std::cout << "\n";
-				std::cout << "[ ERROR ]" << std::endl;
-				Harl::error();
-				break;
+				(this->*functions[1])();
+				 __attribute__ ((fallthrough));
 		case 2:
-				std::cout << "[ WARNING ]" << std::endl;
-				Harl::warning();
-				std::cout << "\n";
-				std::cout << "[ ERROR ]" << std::endl;
-				Harl::error();
-				break;
+				(this->*functions[2])();
+				 __attribute__ ((fallthrough));
 		case 3:
-				std::cout << "[ ERROR ]" << std::endl;
-				Harl::error();
+				(this->*functions[3])();
 				break;
 		default:
 			std::cout << "No Valid Level.\n" << std::endl;

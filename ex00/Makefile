@@ -2,7 +2,7 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = zombies
+TARGET = a.out
 
 SRCS = main.cpp \
 		newZombie.cpp \

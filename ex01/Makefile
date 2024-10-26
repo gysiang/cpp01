@@ -6,7 +6,11 @@
 #    By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 17:44:05 by gyong-si          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2024/10/23 13:24:30 by gyong-si         ###   ########.fr        #
+=======
+#    Updated: 2024/10/26 22:05:53 by gyong-si         ###   ########.fr        #
+>>>>>>> 264a20c (ready to submit)
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +18,7 @@ CC = g++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-TARGET = zombies
+TARGET = a.out
 
 SRCS = main.cpp \
 		zombieHorde.cpp \
