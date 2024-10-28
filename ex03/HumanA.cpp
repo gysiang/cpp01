@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 11:42:44 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/26 22:51:55 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/28 11:22:55 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ HumanA::HumanA(const std::string &name, Weapon &weapon) : name(name), weapon(wea
 
 HumanA::~HumanA() {};
 
-void	HumanA::attack() const
-{
+void	HumanA::attack() const {
 	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }

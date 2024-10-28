@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 23:45:53 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/10/15 23:56:28 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:10:36 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	main(void)
 	std::cout << "Memory address of stringPTR: " << stringPTR << std::endl;
 	std::cout << "Memory address accessed by stringREF: " << &stringREF << std::endl;
 	std::cout << "Value of string variable: " << brain << std::endl;
-	std::cout << "Value of stringPTR: " << &stringPTR << std::endl;
+	std::cout << "Value of stringPTR: " << *stringPTR << std::endl;
 	std::cout << "Value pointed to by stringREF: " << stringREF << std::endl;
 
 	return (0);
